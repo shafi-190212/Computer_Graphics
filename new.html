@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transform Polygon</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body> 
+    <div class="grid-container">
+      <div class="x">
+        <h1>Geometric transformation</h1>
+
+        <button class="button" onclick="setTransformation('translate')">
+          Translate
+        </button>
+        <button class="button" onclick="setTransformation('scale')">
+          Scale
+        </button>
+        <button class="button" onclick="setTransformation('rotate')">
+          Rotate
+        </button>
+        <br>
+        <br>
+        <div id="input1" style="display: none">
+          <p id="param1"></p>
+          <input type="number" id="param2" placeholder ="X = "/>
+          <input type="number" id="param3" placeholder ="Y = "/>
+        </div>
+        <div id="input2" style="display: none">
+          <p>Enter Angle: <input type="number" id="angle"/></p>
+        </div>
+        <div id ="button" style="display: none;">
+          <button class="button" onclick="transformPolygon()">
+            Transform Polygon
+          </button>
+          <button class="button" onclick="resetVertices()">Reset Vertices</button>
+        </div>
+       
+      </div>
+      <div>
+        <canvas id="myCanvas" width="700" height="600"></canvas>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

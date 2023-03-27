@@ -1,0 +1,55 @@
+canvas {
+  border: 1px solid black;
+  margin-left: 10%;
+}
+
+.grid-container {
+  display: grid;
+
+  /*align-content: center;*/
+  grid-template-columns: auto auto; /*Make the grid smaller than the container*/
+  gap: 10px;
+  background-color: #b3b3ad;
+  padding: 10px;
+}
+
+.button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: rgb(250, 249, 255);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.x {
+  background-color: rgb(143, 174, 175);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+  justify-items: center;
+}
+.item1 {
+  grid-column: 1 / 5;
+}
+input[type="number"],
+select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
