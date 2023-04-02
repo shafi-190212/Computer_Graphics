@@ -1,3 +1,6 @@
+body{
+  background-color:aquamarine;
+}
 canvas {
   border: 1px solid black;
   margin-left: 10%;
@@ -14,7 +17,7 @@ canvas {
 }
 
 .button {
-  background-color: #4caf50; /* Green */
+  background-color: #09c30f; /* Green */
   border: none;
   color: rgb(250, 249, 255);
   padding: 10px;
@@ -27,8 +30,8 @@ canvas {
   border-radius: 12px;
 }
 
-.x {
-  background-color: rgb(143, 174, 175);
+.container {
+  background-color: aquamarine;
   text-align: center;
   padding: 20px 0;
   font-size: 20px;

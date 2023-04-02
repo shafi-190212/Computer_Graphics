@@ -10,8 +10,68 @@
     </style>
   </head>
   <body> 
+    <select id="getFname" onchange="selectOption(this);" style="font-size: large; text-align: center;">
+      <option id="scan-convert" value="1" selected="selected">Scan Conversion</option>
+      <option id="transformation-2d" value="2">2D transformation</option>    
+    </select>
     <div class="grid-container">
-      <div class="x">
+      
+      <div class="container" id="scan">
+        <h1>Scan Conversion</h1>
+        <button class="button" onclick="setConversion('line')">
+          Line
+        </button>
+        <button class="button" onclick="setConversion('circle')">
+          Circle
+        </button>
+        <button class="button" onclick="setConversion('ellipse')">
+          Ellipse
+        </button>
+        <br>
+        <br>
+        <select id="algorithm" style="font-size: 16px; display: none;">
+          <option value="midpoint">Midpoint</option>
+          <option value="bresenham">Bresenham</option>
+        </select>
+        <div id="line" style="display: none;">
+          <p id="para1"></p>
+          <label for="x0">x0:</label>
+          <input type="number" placeholder="x0" id="x0" value="0"/><br/>
+          <label for="y0">y0:</label>
+          <input type="number" placeholder="y0" id="y0" value="0"/><br />
+          <label for="x1">x1:</label>
+          <input type="number" placeholder="x1" id="x1" value="50"/><br/>
+          <label for="y1">y1:</label>
+          <input type="number" placeholder="y1" id="y1" value="50"/>
+        </div>
+        <div id="circle" style="display: none;">
+          <p id="para2"></p>
+          <label for="x0">X:</label>
+          <input type="number" id="xc" value="0" /><br />
+          <label for="y0">Y:</label>
+          <input type="number" id="yc" value="0" /><br />
+          <label for="radius">R:</label>
+          <input type="number" id="radius" value="50" />
+        </div>
+        <div id="ellipse" style="display: none;">
+          <p id="para3"></p>
+          <label for="xe">X:</label>
+          <input type="number" id="xe" value="0" /><br />
+          <label for="ye">Y:</label>
+          <input type="number" id="ye" value="0" /><br />
+          <label for="major">a </label>:</label>
+          <input type="number" id="a" value="50" /><br />
+          <label for="major">b </label>:</label>
+          <input type="number" id="b" value="50" />
+        </div>
+          
+        <div id ="button1" style="display: none;">
+          <button class="button" onclick="draw()">Draw </button>
+          <button class="button" onclick="resetVertices()">Reset Vertices</button>
+        </div>
+      </div>
+
+      <div class="container" id="transform" style="display: none;"> 
         <h1>Geometric transformation</h1>
 
         <button class="button" onclick="setTransformation('translate')">
@@ -24,10 +84,11 @@
           Rotate
         </button>
         <br>
-        <br>
         <div id="input1" style="display: none">
           <p id="param1"></p>
-          <input type="number" id="param2" placeholder ="X = "/>
+          <label for="param2">X: </label>
+          <input type="number" id="param2" placeholder ="X = "/><br>
+          <label for="param2">Y: </label>
           <input type="number" id="param3" placeholder ="Y = "/>
         </div>
         <div id="input2" style="display: none">
@@ -41,8 +102,9 @@
         </div>
        
       </div>
+
       <div>
-        <canvas id="myCanvas" width="700" height="600"></canvas>
+        <canvas id="myCanvas" width="640" height="640"></canvas>
       </div>
     </div>
     <script src="script.js"></script>
